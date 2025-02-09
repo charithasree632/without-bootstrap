@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure CSS Tabs Example</title>
+  <style>
+    /* Tab Navigation */
+    .tabs {
+      display: flex;
+      cursor: pointer;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .tab-label {
+      padding: 10px 20px;
+      background: #f1f1f1;
+      margin-right: 5px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .tab-label:hover {
+      background-color: #ddd;
+    }
+
+    /* Hide radio buttons */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Tab content styling */
+    .tab-content {
+      display: none;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+
+    /* Show active tab content */
+    input[type="radio"]:checked + .tab-label {
+      background-color: #ddd;
+      font-weight: bold;
+    }
+
+    input[type="radio"]:checked + .tab-label + .tab-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tabs Navigation -->
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tabs" checked>
+    <label for="tab1" class="tab-label">Home</label>
+    <div class="tab-content">Welcome to the Home tab.</div>
+
+    <input type="radio" id="tab2" name="tabs">
+    <label for="tab2" class="tab-label">Profile</label>
+    <div class="tab-content">This is the Profile.</div>
+
+    <input type="radio" id="tab3" name="tabs">
+    <label for="tab3" class="tab-label">Contact</label>
+    <div class="tab-content">Here is the Contact info.</div>
+  </div>
+</body>
+</html>
